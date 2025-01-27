@@ -18,19 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.db import connection
 from django.shortcuts import render
+from . import views
+from .views import login
+ 
 
-
-def actors_list(request):
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM ACTOR")
-        rows = cursor.fetchall()
-        columns = [col[0] for col in cursor.description]
-
-    data = [dict(zip(columns, row)) for row in rows]
-    return render(request, 'actors_list.html', {'data': data})
 
 # URL patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('actors/', actors_list),  # Corrected function reference
+    path('actors/', login),
+    path('login/',login),# Corrected function reference
 ]

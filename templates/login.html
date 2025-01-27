@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        table.center {
+            
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+    
+        th {
+            border: 1px solid black;    
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {background-color:rgb(237, 95, 95);}
+    
+       
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Login</h2>
+        
+            {% for user in data %}
+            username:
+            {{ user.username }}
+            <br>
+            password:
+                {{ user.password }}
+           
+            {% endfor %}
+                
+               
+                
+            
+           
+    </div>
+</body>
+</html>
