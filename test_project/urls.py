@@ -19,13 +19,16 @@ from django.urls import path
 from django.db import connection
 from django.shortcuts import render
 from . import views
-from .views import login
+
  
 
 
 # URL patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('actors/', login),
-    path('login/',login),# Corrected function reference
+    path('actors/', views.actors_list),
+    path('login/',views.login),
+    path('stud_list/',views.name),
+    path('stud_details/',views.stud_details),
+    # Corrected function reference
 ]

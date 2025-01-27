@@ -35,3 +35,25 @@ def login(request):
         'password': 'admin'
     }]
     return render(request, 'login.html',{'data': userdata})
+def name(request):
+    stud_name=['amal','aman','amen']
+    return render(request, 'students_list.html', {'data': stud_name})
+
+def stud_details(request):
+    stud_details = [{
+        'name': 'amal',
+        'age': 22,
+        'class': 'btech'
+    },
+    {
+        'name': 'aman',
+        'age': 22,
+        'class': 'mca'
+    },
+    {
+        'name': 'amen',
+        'age': 22,
+        'class': 'bca'
+    }                
+    ]
+    return render(request, 'stud_details.html', {'data': stud_details})
